@@ -9,11 +9,6 @@
  * @author    Laurent MINGUET <webmaster@html2pdf.fr>
  * @copyright 2016 Laurent MINGUET
  */
-//~ require_once(__DIR__ . '/vendor/autoload.php');
-//~ require_once(dirname(__FILE__).'/_class/tcpdfConfig.php');
-//~ require_once(dirname(__FILE__).'/_class/locale.class.php');
-//~ require_once(dirname(__FILE__).'/_class/myPdf.class.php');
-//~ require_once(dirname(__FILE__).'/tcpdf/tcpdf.php');
 
 class HTML2PDF
 {
