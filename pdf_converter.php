@@ -14,6 +14,7 @@ if(isset($_GET['cid'])){
   if (isset($_GET['html'])){
     require(__DIR__ . '/html2pdf/vendor/autoload.php');
     $html2pdf = new HTML2PDF('P','A4','fr');
+    $html2pdf->setTestIsImage(false);
     $html2pdf->WriteHTML($titulo.$contenido);
     $html2pdf->Output('exemple.pdf');
   }
