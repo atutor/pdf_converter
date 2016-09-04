@@ -3,19 +3,19 @@
     <name lang="en">PDF Converter</name>
     <description lang="en">This is a module that can be used to convert content files from content navigation to pdf format files</description> 
     <name lang="fr">Convertisseur PDF</name>
-    <description lang="fr">Ce module peut être utilisé pour convertir des contenus de fichier de navigation vers un format pdf</description> 
+    <description lang="fr">Ce module crée un bloc dans le menu latéral du cours pour pouvoir convertir son contenu en pdf. Aidez vous de la Table des matières.</description> 
     <maintainers>
         <maintainer>
-            <name>arbolsistemas</name>
-            <email>info@arbolsistemas.com.ar</email>
+            <name>SudWebDesign</name>
+            <email>sudwebdesign.fr</email>
         </maintainer>
     </maintainers>
-    <url>http://arbolsistemas.com.ar</url>
+    <url>http://sudwebdesign.fr</url>
     <license>GNU</license>
 	<release>
-        <version>0.3</version>
+        <version>0.4</version>
         <date>2016-09-04</date>
         <state>beta</state>
-        <notes>Convert course content to a pdf document. This module creates a side menu block with a link that when clicked generates the page being viewd as a PDF file. This is an extra module</notes>
+        <notes>Convert course content to a pdf document. This module creates a side menu block with 2 links (text only and HTML2PDF) that when clicked generates the page being viewd as a PDF file. This is an extra module</notes>
     </release>
 </module>
