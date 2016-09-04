@@ -6,9 +6,9 @@ require (AT_INCLUDE_PATH.'vitals.inc.php');
 
 if(isset($_GET['cid'])){
 	$sql 	= "SELECT * FROM ".TABLE_PREFIX."content WHERE content_id=$_GET[cid]";
-	$result = mysql_query($sql);
-	if(mysql_num_rows($result)!=0){
-		$content_row = mysql_fetch_assoc($result);
+	$result = queryDBresult($sql);
+	if($result->num_rows!=0){
+		$content_row = $result->fetch_assoc();
 		//$titulo = strip_tags($content_row['title']);
 		$titulo = $content_row['title'];
 		//$contenido = strip_tags($content_row['text']);
@@ -62,22 +62,13 @@ if(isset($_GET['cid'])){
 */
 		$titulo   	= strip_tags(pdfCleaner( $titulo ));
 		$contenido 	= trim(strip_tags(pdfCleaner( $contenido )));
-		//$contenido 	= str_word_count($contenido,1);
-		//$contenido 	= implode(" ",$contenido);
 
-		//Leemos el fichero
-		$muestra_pdf = 'muestra_pdf.txt';
-    	$f=fopen($muestra_pdf,'w');
-    	fwrite($f,$contenido);
-    	fclose($f);
-    	$f=fopen($muestra_pdf,'r+');
 		$pdf=new FPDF();
 		$pdf->AddPage();
 		$pdf->SetFont('Arial','',10);
-		fclose($f);
 		//$pdf->Cell(0,5,$titulo);
 		//$pdf->Ln(10);
-		$pdf->MultiCell(0,3,$contenido);
+		$pdf->MultiCell(0,3,utf8_decode($titulo.PHP_EOL.PHP_EOL.$contenido));
 		$pdf->Output();
 	}
 	else{
@@ -105,8 +96,6 @@ function pdfCleaner( $text ) {
 	$text = str_replace( '<BR>', 			"\n", 		$text );
 	$text = str_replace( '<li>', 			"\n - ", 	$text );
 	$text = str_replace( '<LI>', 			"\n - ", 	$text );
-	$text = str_replace( '{mosimage}', 		'', 		$text );
-	$text = str_replace( '{mospagebreak}', 	'',			$text );
 	$text = str_replace( '<table>','',$text );
 	$text = str_replace( '<TABLE>','',$text );
 	$text = str_replace( '</table>','',$text );
