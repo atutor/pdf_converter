@@ -2,10 +2,10 @@
 define('AT_INCLUDE_PATH', $_SERVER['DOCUMENT_ROOT'].'/include/');// CONTEXT_DOCUMENT_ROOT
 require (AT_INCLUDE_PATH.'vitals.inc.php');
 if(isset($_GET['cid'])){
-	$sql 	= "SELECT * FROM ".TABLE_PREFIX."content WHERE content_id=$_GET[cid]";
-	$result = queryDBresult($sql);
-	if($result->num_rows!=0){
-		$content_row = $result->fetch_assoc();
+	$sql = "SELECT * FROM %scontent WHERE content_id=%d";
+	$content_row = queryDB($sql, array(TABLE_PREFIX, $_GET['cid']));
+	$content_row = $content_row[0];
+	if($content_row!=0){
 		//$titulo = strip_tags($content_row['title']);
 		$titulo = '<h1 style="text-align:center;">'.$content_row['title'].'</h1>';
 		//$contenido = strip_tags($content_row['text']);
