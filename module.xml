@@ -1,20 +1,21 @@
-<?xml version="1.0" encoding="ISO-8859-1"?> 
-<module version="0.1"> 
-    <name lang="en">PDF Converter</name> 
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<module version="0.1">
+    <name lang="en">PDF Converter</name>
     <description lang="en">This is a module that can be used to convert content files from content navigation to pdf format files</description> 
+    <name lang="fr">Convertisseur PDF</name>
+    <description lang="fr">Ce module crée un bloc dans le menu latéral du cours pour pouvoir convertir son contenu en pdf. Aidez vous de la Table des matières.</description> 
     <maintainers>
-        <maintainer> 
-            <name>arbolsistemas</name> 
-            <email>info@arbolsistemas.com.ar</email> 
+        <maintainer>
+            <name>SudWebDesign</name>
+            <email>sudwebdesign.fr</email>
         </maintainer>
-    </maintainers> 
-    <url>http://arbolsistemas.com.ar</url> 
-    <license>GNU</license> 
-	<release> 
-        <version>0.2</version> 
-        <date>2010-10-25</date> 
-        <state>beta</state> 
-        <notes>Convert course content to a pdf document. This module creates a side menu block with a link that when clicked generates the page being viewd as a PDF file.
-Note: After installing, make for file muestra_pdf.txt writable, if it is not already. This is an extra module</notes> 
-    </release> 
+    </maintainers>
+    <url>http://sudwebdesign.fr</url>
+    <license>GNU</license>
+	<release>
+        <version>0.4</version>
+        <date>2016-09-04</date>
+        <state>beta</state>
+        <notes>Convert course content to a pdf document. This module creates a side menu block with 2 links (text only and HTML2PDF) that when clicked generates the page being viewd as a PDF file. This is an extra module</notes>
+    </release>
 </module>
