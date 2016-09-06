@@ -9,6 +9,7 @@ if(isset($_GET['cid'])){
 		$contenido = $content_row['text'];
 
   if (isset($_GET['html'])){
+    $contenido = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $contenido);
     require(__DIR__ . '/html2pdf/vendor/autoload.php');
     $html2pdf = new HTML2PDF('P','A4','fr');
     $html2pdf->setTestIsImage(false);
