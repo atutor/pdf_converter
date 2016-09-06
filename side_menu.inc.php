@@ -3,7 +3,7 @@
 if(isset($_GET['cid'])){
  /* start output buffering: */
 	ob_start();
-	$hrefMod ='../mods/pdf_converter/';
+	$hrefMod ='/mods/pdf_converter/';
 	$sql = "SELECT content_id,title FROM %scontent WHERE content_id=%d";
 	$content_row = queryDB($sql, array(TABLE_PREFIX, $_GET['cid']),true);
 	echo("
